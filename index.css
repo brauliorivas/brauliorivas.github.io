@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url("assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("assets/fonts/noto-sans-jp/NotoSansJP-VariableFont_wght.ttf")
+    format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: "Noto Sans";
+  font-weight: 600;
+}
+
+nav {
+  border-right: solid 1px black;
+  height: 100vh;
+  padding: 40px 30px;
+}
+
+main {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 5px 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-section {
+  width: 100%;
+  border-bottom: solid 1px black;
+  padding: 10px;
+  padding-left: 20px;
+}
