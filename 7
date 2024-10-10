@@ -39,7 +39,7 @@
 
     <main>
       <header>
-        <h1 id="title">Braulio Rivas</h1>
+        <h1 id="title">Braulio Rivas.</h1>
       </header>
       <section id="experience" class="main-section">
         <h2>Experiencia</h2>
@@ -79,7 +79,6 @@
       const header = document.querySelector("header");
 
       let headerWidth = header.clientWidth;
-      const titleWidth = title.clientWidth;
 
       document.addEventListener("resize", () => {
         headerWidth = headerWidth.clientWidth;
@@ -87,21 +86,12 @@
 
       let lastTimestamp = 0;
 
-      const rate = 2;
+      const rate = 0.5;
 
-      let x = 0;
-
-      function calculateNewX() {
-        const availableSpace = headerWidth - titleWidth - x;
-
-        let newX = x + rate;
-        if (newX >= headerWidth) {
-          newX = -1 * titleWidth;
-        }
-
-        x = newX;
-
-        return newX;
+      function newPadding() {
+        console.log(title.style);
+        const lastPadding = title.style.paddingLeft;
+        const newPadding = lastPadding + rate;
       }
 
       function animateTitle(timeStamp) {
@@ -109,10 +99,11 @@
         const deltaInMiliseconds = delta / 1000;
         lastTimestamp = timeStamp;
 
-        const leftPadding = calculateNewX();
+        const leftPadding = newPadding();
+        console.log(leftPadding);
 
         gsap.to(title, {
-          x: `${leftPadding}px`,
+          paddingLeft: `${newPadding()}px`,
           duration: deltaInMiliseconds,
         });
 
