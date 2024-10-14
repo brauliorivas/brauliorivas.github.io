@@ -1,17 +1,26 @@
 @font-face {
   font-family: "Fira Code";
-  src: url("assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf")
+  src: url("../assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf")
     format("truetype");
 }
 
 @font-face {
-  font-family: "Noto Sans";
-  src: url("assets/fonts/noto-sans-jp/NotoSansJP-VariableFont_wght.ttf")
+  font-family: "Inter";
+  src: url("../assets/fonts/inter/Inter-VariableFont_opsz\,wght.ttf")
     format("truetype");
+}
+
+:root {
+  --color-white: #e6e2db;
+  --color-alternative: #00ffc4;
 }
 
 * {
   box-sizing: border-box;
+}
+
+a {
+  color: var(--color-white);
 }
 
 body {
@@ -19,12 +28,13 @@ body {
   flex-direction: row;
   height: 100vh;
   margin: 0;
-  font-family: "Noto Sans";
+  font-family: "Inter";
   font-weight: 600;
+  background-color: #000000;
+  color: var(--color-white);
 }
 
 nav {
-  border-right: solid 1px black;
   padding: 40px 30px;
   height: 100vh;
 }
@@ -41,22 +51,26 @@ ul {
   padding: 0;
 }
 
+#nav-ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
 .nav-item {
-  margin: 5vh 0px;
 }
 
 .nav-item--link {
-  color: #292929;
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
-  border: 1px solid black;
-  border-color: white;
+  border: 2px solid;
+  border-color: var(--color-white);
 }
 
 .nav-item--link:hover {
-  color: black;
-  background-color: #e3e3e3;
-  border-color: black;
+  background-color: black;
+  border-color: var(--color-alternative);
 }
 
 a {
@@ -70,6 +84,15 @@ h1 {
   font-size: 15vh;
   display: inline-block;
   white-space: nowrap;
+}
+
+h1:hover {
+  cursor: pointer;
+  color: var(--color-alternative);
+}
+
+h2:hover {
+  color: var(--color-alternative);
 }
 
 .main-section {
