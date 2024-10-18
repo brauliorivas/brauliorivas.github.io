@@ -1,7 +1,8 @@
 #experience-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  row-gap: 15px;
 }
 
 .experience-card-outline {
@@ -26,7 +27,6 @@
       "A D"
       "B D"
       "C C";
-    max-height: 50vh;
   }
 
   .experience-card-header {
@@ -37,13 +37,11 @@
     grid-area: B;
   }
 
-  .experience-card-technologies {
+  .technologies {
     grid-area: C;
   }
 
   .experience-card-image {
-    width: 100% !important;
-    margin: 10% !important;
     grid-area: D;
   }
 }
@@ -86,16 +84,6 @@ h3 {
 .experience-card-image {
   width: 30%;
   object-fit: cover;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 5px;
-}
-
-.experience-card-technologies {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 15px;
-  row-gap: 10px;
 }

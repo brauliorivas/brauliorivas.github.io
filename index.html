@@ -40,7 +40,7 @@
 
     <main>
       <header>
-        <h1 id="title">Braulio Rivas</h1>
+        <h1>$<span id="name"></span><br /><span id="last">Rivas</span></h1>
       </header>
       <section id="experience" class="main-section">
         <h2>Experiencia</h2>
@@ -57,16 +57,21 @@
               <p class="experience-description">
                 Contribuidor de Google Summer of Code 2024 @CERN-HSF con el
                 apoyo de DESY. Proyecto "Any Collection in Data Model Explorer"
-                dirigido a mejorar <a href="https://github.com/key4hep/eede/" target="_blank" rel="noopener noreferrer">eede</a>, una herramienta de visualización de
-                datos de EDM4hep, agregando nuevos tipos de datos y herramientas
-                de filtrado.
+                dirigido a mejorar
+                <a
+                  href="https://github.com/key4hep/eede/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >eede</a
+                >, una herramienta de visualización de datos de EDM4hep,
+                agregando nuevos tipos de datos y herramientas de filtrado.
               </p>
               <img
                 class="experience-card-image"
                 src="assets/img/eede-logo.png"
                 alt="eede logo"
               />
-              <div class="experience-card-technologies">
+              <div class="technologies">
                 <img
                   src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000"
                   alt="javascript"
@@ -92,13 +97,75 @@
                   alt="canvas api"
                   height="25"
                 />
-              </section>
-            </div>
+              </div>
+            </section>
+          </div>
+          <div class="experience-card-outline">
+            <section class="experience-card">
+              <div class="experience-card-header">
+                <h3>Ayudante de Docencia</h3>
+                <div class="experience-card-info">
+                  <span class="company">Espol</span>
+                  <span class="dates">Octubre 2023 - Enero 2024</span>
+                </div>
+              </div>
+              <p class="experience-description">
+                Impartí clases sobre Fundamentos de Programación en Python,
+                enseñando a los estudiantes conceptos básicos como tipos de
+                datos, variables, funciones, control de flujo, archivos y
+                librerías como numpy. También dí clases de Programación
+                Orientada a Objetos en Java sobre clases, arrays, hilos,
+                polimorfismo, herencia y javafx.
+              </p>
+              <img
+                class="experience-card-image"
+                src="assets/img/eede-logo.png"
+                alt="eede logo"
+              />
+              <div class="technologies">
+                <img
+                  src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000"
+                  alt="javascript"
+                  height="25"
+                />
+                <img
+                  src="https://img.shields.io/badge/HTML-%23E34F26.svg?logo=html5&logoColor=white"
+                  alt="html"
+                  height="25"
+                />
+                <img
+                  src="https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff"
+                  alt="css"
+                  height="25"
+                />
+                <img
+                  src="https://img.shields.io/badge/Canvas_API-8A2BE2"
+                  alt="canvas api"
+                  height="25"
+                />
+                <img
+                  src="https://img.shields.io/badge/Pixi_JS-E84B64"
+                  alt="canvas api"
+                  height="25"
+                />
+              </div>
+            </section>
           </div>
         </div>
       </section>
       <section id="projects" class="main-section">
         <h2>Proyectos</h2>
+        <div id="generic-container">
+          <section class="generic-element-container">
+            <h3 class="generic-container-title">Renters.io</h3>
+            <p class="generic-container-description"></p>
+            <img
+              class="generic-container-image"
+              src="assets/img/javapython.jpg"
+            />
+            <div class="generic-container-technologies" />
+          </section>
+        </div>
       </section>
       <section id="education" class="main-section">
         <h2>Educación</h2>
@@ -125,52 +192,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
     <script>
       gsap.registerPlugin(TextPlugin);
+      const name = document.getElementById("name");
 
-      const title = document.getElementById("title");
-      const header = document.querySelector("header");
+      gsap.defaults({ ease: "none" });
 
-      let headerWidth = header.clientWidth;
-      const titleWidth = title.clientWidth;
-
-      document.addEventListener("resize", () => {
-        headerWidth = headerWidth.clientWidth;
-      });
-
-      let lastTimestamp = 0;
-
-      const rate = 2;
-
-      let x = 0;
-
-      function calculateNewX() {
-        let newX = x + rate;
-        if (newX >= headerWidth) {
-          newX = -1 * titleWidth;
-        }
-
-        x = newX;
-
-        return newX;
-      }
-
-      function animateTitle(timeStamp) {
-        const delta = timeStamp - lastTimestamp;
-        const deltaInMiliseconds = delta / 1000;
-        lastTimestamp = timeStamp;
-
-        const leftPadding = calculateNewX();
-
-        gsap.to(title, {
-          x: `${leftPadding}px`,
-          duration: deltaInMiliseconds,
-        });
-
-        requestAnimationFrame(animateTitle);
-      }
-
-      requestAnimationFrame(animateTitle);
+      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
+      tl.to(name, { duration: 3, text: "Braulio" });
     </script>
   </body>
 </html>
