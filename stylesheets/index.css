@@ -95,16 +95,12 @@ h1 {
 }
 
 #name {
+  color: var(--color-alternative);
   font-size: 3rem;
 }
 
 #last {
   font-size: 2rem;
-}
-
-#name:hover {
-  cursor: pointer;
-  color: var(--color-alternative);
 }
 
 header {
@@ -117,17 +113,9 @@ header {
   padding-left: 20px;
 }
 
-.technologies {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 15px;
-  row-gap: 10px;
-}
-
 .generic-container {
+  display: flex;
+  flex-direction: column;
   row-gap: 30px;
 }
 
@@ -138,6 +126,54 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid #1d1d1d;
+}
+
+.generic-element-container:hover {
+  border: 1px solid #303030;
+
+  border-radius: 5px;
+  background: rgb(16, 16, 16);
+  background: linear-gradient(
+    0deg,
+    rgba(16, 16, 16, 1) 0%,
+    rgba(29, 0, 47, 1) 82%,
+    rgba(10, 0, 59, 1) 100%
+  );
+  transform: translateY(-3px);
+}
+
+.generic-container-title {
+  margin: 0;
+  font-family: "Fira Code";
+}
+
+.generic-subtitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.generic-alternate-subtitle {
+  color: var(--color-alternative);
+}
+
+.generic-main-subtitle {
+  color: #c5c5c5;
+}
+
+.generic-container-description {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.generic-container-technologies {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 15px;
+  row-gap: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -149,19 +185,23 @@ header {
       "C C";
   }
 
-  .experience-card-header {
+  .generic-container-title {
     grid-area: A;
   }
 
-  .experience-description {
+  .generic-container-description {
     grid-area: B;
   }
 
-  .technologies {
-    grid-area: C;
+  .generic-container-image {
+    grid-area: D;
+    width: 60%;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 5px;
   }
 
-  .experience-card-image {
-    grid-area: D;
+  .generic-container-technologies {
+    grid-area: C;
   }
 }
