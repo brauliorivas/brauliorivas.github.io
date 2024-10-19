@@ -296,6 +296,49 @@ footer ul li {
   column-gap: 10px;
 }
 
-footer ifreme {
-  margin: 10px;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 10%;
+  row-gap: 20px;
+  width: fit-content;
+}
+
+form label {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 10px;
+  width: 100%;
+}
+
+form button {
+  padding: 5px 15px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: transparent;
+  border: 1px solid var(--color-alternative);
+  color: var(--color-white);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+form button:hover {
+  cursor: pointer;
+}
+
+label input,
+textarea {
+  border: none;
+  border-bottom: 2px solid var(--color-alternative);
+  padding: 2px;
+  outline: none;
+  color: var(--color-white);
+  font-family: "Inter";
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+label span {
+  font-weight: normal;
 }

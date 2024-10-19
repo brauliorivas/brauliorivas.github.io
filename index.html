@@ -445,6 +445,28 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+        <form action="https://formspree.io/f/xqakazbj" method="POST">
+          <p>Contáctame!</p>
+          <label for="fullname">
+            <span>Nombre completo</span>
+            <input type="text" id="fullname" name="fullname" required />
+          </label>
+          <label for="email"
+            ><span>Correo electrónico</span>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </label>
+          <label for="message">
+            <span>Mensaje:</span>
+            <textarea id="message" name="message" rows="5" cols="20"></textarea>
+          </label>
+          <button type="submit" name="send">Enviar</button>
+        </form>
       </footer>
     </main>
   </body>
