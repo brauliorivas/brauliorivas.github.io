@@ -1,18 +1,18 @@
 @font-face {
   font-family: "Fira Code";
-  src: url("../assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf")
+  src: url("assets/fonts/fira-code/FiraCode-VariableFont_wght.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../assets/fonts/inter/Inter-VariableFont_opsz\,wght.ttf")
+  src: url("assets/fonts/inter/Inter-VariableFont_opsz\,wght.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Code";
-  src: url("../assets/fonts/code/Code.ttf") format("truetype");
+  src: url("assets/fonts/code/Code.ttf") format("truetype");
 }
 
 :root {
